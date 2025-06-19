@@ -1,7 +1,7 @@
 import dbf
 
 table = dbf.Table(
-        filename='000.dbf',
+        filename='001.dbf',
         field_specs='name C(25); age N(3,0); birth D; qualified L',
         )
 
