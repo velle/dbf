@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61", "wheel"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,7 +10,9 @@ readme = "README.md"
 authors = [
     { name="Ethan Furman", email="ethan@stoneleaf.us" },
 ]
-license = [ 'LICENSE', 'WHATSNEW' ]
+# license-files only allowed for 3.8+, license changed behavior from 3.8+
+#license = 'BSD-3-Clause'
+#license-files = [ 'LICENSE' ]
 requires-python = ">=2.7, >=3.5"
 dependencies = [
     "aenum",
@@ -18,7 +20,6 @@ dependencies = [
 classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
-    'License :: OSI Approved :: BSD License',
     'Programming Language :: Python',
     'Topic :: Database',
     'Programming Language :: Python :: 2.7',

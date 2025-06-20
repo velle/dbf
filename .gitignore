@@ -29,3 +29,5 @@ test_export.csv
 MANIFEST
 *.egg-info
 build
+.tox
+.python-version
