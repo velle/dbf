@@ -16,7 +16,8 @@ and run, e.g.:
 
 If you attempt to run eg 2.7 from a newer/standard environment (ie virtualenv >= 20.22), tox will print (somewhat misleading):
 
-    
+    $ tox -e py27
+    py27: skipped because could not find python interpreter with spec(s): py27
 
 
 ## Testing
@@ -52,9 +53,13 @@ With tox, just do:
 
     tox
 
-or 
+To run tests for only Python 3.7:
 
     tox -e py37
+
+To pass arguments on to pytest, insert -- separator, and then those arguments. E.g. to look for tests only in folder `tests_unittest` and run only tests matching `da`:
+
+    tox -e py37 -- tests_unittest -k da
 
 
 #### Running unittests with pytest
