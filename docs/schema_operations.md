@@ -43,74 +43,20 @@ The argument can be either Iterable or str, in the form:
 
 ### Renaming field
 
-dbf-module does not directly support this, but this function does:
-
-```
-import dbf
-import os
-
-def rename(tbl, from_name, to_name):
-    """
-    Rename a field in a dbf.Table.
-    
-    Parameters:
-        tbl (dbf.Table): An opened DBF table (must be opened in READ_WRITE mode).
-        from_name (str): The current name of the field to rename.
-        to_name (str): The new name to assign to the field.
-        
-    The function will:
-        - Create a temporary renamed table.
-        - Copy the structure, renaming the field.
-        - Copy the records.
-        - Replace the original table file.
-    """
-    if from_name.lower() == to_name.lower():
-        raise ValueError("from_name and to_name are the same (case-insensitive).")
-
-    original_path = tbl.filename
-    temp_path = original_path.replace('.dbf', '_renamed.dbf')
-    
-    # Build the new structure string
-    new_structure = []
-    for field in tbl.structure():
-        if field.name.lower() == from_name.lower():
-            new_field = f'{to_name} {field.type_code}({field.length}'
-            if field.decimal_count:
-                new_field += f',{field.decimal_count}'
-            new_field += ')'
-            new_structure.append(new_field)
-        else:
-            new_structure.append(field.description)
-    
-    new_table = dbf.Table(temp_path, ';'.join(new_structure))
-    new_table.open(dbf.READ_WRITE)
-
-    # Copy records
-    for rec in tbl:
-        new_rec = {}
-        for field in tbl.field_names:
-            val = rec[field]
-            target_field = to_name if field.lower() == from_name.lower() else field
-            new_rec[target_field] = val
-        new_table.append(new_rec)
-
-    # Close both
-    tbl.close()
-    new_table.close()
-
-    # Replace original with renamed
-    os.remove(original_path)
-    os.rename(temp_path, original_path)
-
-    print(f"Field '{from_name}' renamed to '{to_name}' in {original_path}")
-```
-
-Usage:
-
 ```
     tbl = dbf.Table('test.dbf')
     tbl.open(dbf.READ_WRITE)
     rename(tbl, 'name', 'birthname')
+    # operation is applied to file instantly
+```
+
+
+### Resizing field
+
+```
+    tbl = dbf.Table('test.dbf')
+    tbl.open(dbf.READ_WRITE)
+    resize(tbl, 'name', 'C(40)')
     # operation is applied to file instantly
 ```
 
@@ -221,3 +167,8 @@ def reorder(tbl, field_name_list):
     os.remove(tbl.filename)
     os.rename(tmp_filename, tbl.filename)
 ```
+
+
+## foo
+
+./tables.py:    def resize_field(self, chosen, new_size):
