@@ -281,7 +281,7 @@ class TestQuantum(TestCase):
         unknown = Quantum(None)
         self.assertEqual(true >> true, true)
         self.assertEqual(true >> false, false)
-#        self.assertEqual(false >> true, true) # fails in pytest, but not in unittest
+        self.assertEqual(false >> true, true)
         self.assertEqual(false >> false, true)
         self.assertEqual(true >> unknown is unknown, True)
         self.assertEqual(false >> unknown, true)
