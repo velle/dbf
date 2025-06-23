@@ -1,19 +1,12 @@
-#from unittest import skipIf, skipUnless, TestCase as unittest_TestCase
 import os
 import tempfile
 import datetime
-
-from test_main import TestCase
 
 import dbf
 from dbf import *
 from dbf.constants import *
 
-from test_main import \
-    tempdir, \
-    floats, words, numbers, \
-    active, inactive, \
-    index
+from common import *
 
 
 class TestDbfFunctions(TestCase):
