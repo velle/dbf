@@ -12,9 +12,9 @@ from unittest import skipIf, skipUnless, TestCase as unittest_TestCase
 py_ver = sys.version_info[:2]
 module = globals()
 
-from . import dbf
-from . import *
-from .constants import *
+import dbf
+from dbf import *
+from dbf.constants import *
 
 try:
     import pytz
