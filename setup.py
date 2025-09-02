@@ -27,6 +27,7 @@ data = dict(
         long_description=long_desc,
         long_description_content_type='text/plain',
         url='https://github.com/ethanfurman/dbf',
+        package_dir={"": "src"},
         packages=['dbf', ],
         provides=['dbf'],
         install_requires=['aenum'],
