@@ -15,7 +15,7 @@ deprecation warnings are printed.
 Simply run:
 
 ```bash
-python -m tests.test
+python -m pytest
 ```
 
 ## Running Tox

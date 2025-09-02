@@ -31,6 +31,17 @@ else:
     MISC = ''.join([chr(i) for i in range(256)]).encode('latin-1')
     PHOTO = ''.join(reversed([chr(i) for i in range(256)])).encode('latin-1')
 
+tempdir = None
+
+def setUpModule():
+    global tempdir
+    tempdir = tempfile.mkdtemp()
+
+def tearDownModule():
+    global tempdir
+    shutil.rmtree(tempdir, True)
+    tempdir = None
+
 try:
     with warnings.catch_warnings():
         warnings.warn('test if warning is an exception', DbfWarning, stacklevel=1)
@@ -5603,10 +5614,5 @@ class TestWhatever(TestCase):
         self.vfp_table.close()
 
 
-# main
 if __name__ == '__main__':
-    tempdir = tempfile.mkdtemp()
-    try:
-        unittest.main()
-    finally:
-        shutil.rmtree(tempdir, True)
+    unittest.main()
