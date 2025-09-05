@@ -79,7 +79,6 @@ Custom data types::
                   numerical value, and attempts to use it as such will raise
                   an exception
 
-
 Whirlwind Tour
 --------------
 
