@@ -226,5 +226,3 @@ def _normalize_tuples(tuples, length, filler):
         else:
             final.append(t)
     return tuple(final)
-
-

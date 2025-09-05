@@ -181,5 +181,3 @@ class ContainedIndex(_Navigation):
                 result._maybe_add(item=(self._table, self._rec_by_val[loc], result.key(record)))
                 loc += 1
         return result
-
-

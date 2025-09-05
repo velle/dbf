@@ -86,7 +86,7 @@ Whirlwind Tour
 Reading a DBF:
 
     import dbf
-    
+
     dbf_filename = "some-file.dbf"
     encoding = "utf8"
     table = dbf.Table(dbf_filename, codepage=encoding, on_disk=True)

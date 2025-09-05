@@ -216,7 +216,7 @@ Add .fromfloat() to Time
 
 Add .tofloat() to Time
 
-Add Period for matching various time periods 
+Add Period for matching various time periods
 
 
 0.95.006
