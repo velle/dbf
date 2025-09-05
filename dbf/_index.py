@@ -10,7 +10,7 @@ class IndexFile(object):
         if not os.path.exists(filename):
             self.index_file = open(filename, 'r+b')
             self.index_file.write(b'\xea\xaf\x37\xbf' +    # signature
-                                  b'\x00'*8           +    # two non-existant lists
+                                  b'\x00'*8           +    # two non-existent lists
                                   b'\x00'*500)             # and no indices
             return
         index_file = self.index_file = open(filename, 'r+b')

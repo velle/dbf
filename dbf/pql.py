@@ -40,7 +40,7 @@ def pql_recall(records, all_fields, condition, field_names):
         if is_deleted(record):
             revivified.append(record)
             undelete(record)
-    revivified.modfied = len(revivified), 'record' + ('', 's')[len(revivified)>1]
+    revivified.modified = len(revivified), 'record' + ('', 's')[len(revivified)>1]
     return revivified
 
 def pql_add(records, new_fields, condition, field_names):

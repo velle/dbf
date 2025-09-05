@@ -12,10 +12,10 @@ Highlights
 ----------
 
 Table -- represents a single .dbf/.dbt (or .fpt) file combination
-and provides access to records; suports the sequence access and 'with'
+and provides access to records; supports the sequence access and 'with'
 protocols.  Temporary tables can also live entirely in memory.
 
-Record -- repesents a single record/row in the table, with field access
+Record -- represents a single record/row in the table, with field access
 returning native or custom data types; supports the sequence, mapping,
 attribute access (with the field names as the attributes), and 'with'
 protocols.  Updates to a record object are reflected on disk either
