@@ -86,3 +86,26 @@ To run all environments/targets:
 ```bash
 tox
 ```
+
+## pre-commit
+
+The repo contains a file `.pre-commit-config.yaml`, which defines
+a number of code quality and code style checks.
+
+To install pre-commit:
+
+```bash
+pip install pre-commit
+```
+
+To run manually:
+
+```bash
+pre-commit run --all-files
+```
+
+Its possible to set up git to run pre-commit before any commit, by using:
+
+```bash
+pre-commit install
+```
