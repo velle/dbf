@@ -15,6 +15,7 @@ Not supported: index files (but can create temporary non-file indexes), auto-inc
 Installation:  `pip install dbf`
 """
 
+# py2_only, py3_only, make: required for Ethan's build system
 py2_only = ()
 py3_only = ()
 make = []
