@@ -1,11 +1,11 @@
+# Import snippet below is a hack widely used on Python 2.x and early 3.x
+# Importing setuptools has sideeffects that affects build process.
 try:
     import setuptools
-    setuptools
+    setuptools         # keeps linters from complaining
 except ImportError:
     pass
 from distutils.core import setup
-
-#html_docs = glob('dbf/html/*')
 
 long_desc="""
 Currently supports dBase III, Clipper, FoxPro, and Visual FoxPro tables. Text is returned as unicode, and codepage settings in tables are honored. Memos and Null fields are supported.  Documentation needs work, but author is very responsive to e-mails.
